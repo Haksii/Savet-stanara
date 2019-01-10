@@ -1,0 +1,1079 @@
+﻿// KLASA STANARA
+
+
+
+package projekat_nrt_43_16;
+
+public class Stanar {
+    private String ime_prezime;
+    private int godina_rodjenja;
+    private String e_mail;
+    private String kor_ime;
+    private String lozinka;
+    private int broj_stana;
+    private boolean nosilac_stana;
+    
+    public Stanar()
+    {
+        ime_prezime = "Nepoznato";
+        godina_rodjenja = 0;
+        e_mail = "Nepoznato";
+        kor_ime = "Nepoznato";
+        lozinka = "Nepoznata";
+        broj_stana = 0;
+        nosilac_stana = false;
+    }
+
+    public Stanar(String ime_prezime, int godina_rodjenja, String e_mail, String kor_ime, String lozinka, int broj_stana, boolean nosilac_stana) {
+        this.ime_prezime = ime_prezime;
+        this.godina_rodjenja = godina_rodjenja;
+        this.e_mail = e_mail;
+        this.kor_ime = kor_ime;
+        this.lozinka = lozinka;
+        this.broj_stana = broj_stana;
+        this.nosilac_stana = nosilac_stana;
+    }
+
+    public String getIme_prezime() {
+        return ime_prezime;
+    }
+
+    public int getGodina_rodjenja() {
+        return godina_rodjenja;
+    }
+
+    public String getE_mail() {
+        return e_mail;
+    }
+
+    public String getKor_ime() {
+        return kor_ime;
+    }
+
+    public String getLozinka() {
+        return lozinka;
+    }
+
+    public int getBroj_stana() {
+        return broj_stana;
+    }
+
+    public boolean isNosilac_stana() {
+        return nosilac_stana;
+    }
+
+    public void setIme_prezime(String ime_prezime) {
+        this.ime_prezime = ime_prezime;
+    }
+
+    public void setGodina_rodjenja(int godina_rodjenja) {
+        this.godina_rodjenja = godina_rodjenja;
+    }
+
+    public void setE_mail(String e_mail) {
+        this.e_mail = e_mail;
+    }
+
+    public void setKor_ime(String kor_ime) {
+        this.kor_ime = kor_ime;
+    }
+
+    public void setLozinka(String lozinka) {
+        this.lozinka = lozinka;
+    }
+
+    public void setBroj_stana(int broj_stana) {
+        this.broj_stana = broj_stana;
+    }
+
+    public void setNosilac_stana(boolean nosilac_stana) {
+        this.nosilac_stana = nosilac_stana;
+    }
+
+    @Override
+    public String toString() {
+        String nosilac="";
+        if(nosilac_stana)
+        {
+            nosilac =" je nosilac stana";
+        }else{
+            nosilac =" nije nosilac stana";
+        }
+        return ime_prezime + ", rodjen: " + godina_rodjenja + ", zivi u broju " + broj_stana + nosilac + " || e_mail:" + e_mail;
+    }
+    
+    
+    
+}
+
+
+
+
+
+// KLASA ZGRADA
+
+
+
+
+
+
+package projekat_nrt_15_16;
+
+public class Zgrada 
+{
+    private String adresa;
+    private int broj;
+    private String opstina;
+    private String grad;
+    private Stan[] stanovi;
+    private int broj_stanova;
+    
+    public Zgrada()
+    {
+        adresa = "nepoznato";
+        broj = 0;
+        opstina = "nepoznato";
+        grad = "nepoznato";
+    }
+    public Zgrada(String adresa, int broj, String opstina, String grad, int broj_stanova)
+    {
+        this.adresa = adresa;
+        this.broj = broj;
+        this.opstina = opstina;
+        this.grad = grad;
+        this.broj_stanova = broj_stanova;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public int getBroj() {
+        return broj;
+    }
+
+    public String getOpstina() {
+        return opstina;
+    }
+
+    public String getGrad() {
+        return grad;
+    }
+
+    public Stan[] getStanovi() {
+        return stanovi;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
+
+    public void setBroj(int broj) {
+        this.broj = broj;
+    }
+
+    public void setOpstina(String opstina) {
+        this.opstina = opstina;
+    }
+
+    public void setGrad(String grad) {
+        this.grad = grad;
+    }
+
+    public void setStanovi(int broj_stanova) {
+        stanovi = new Stan[broj_stanova];
+    }
+    
+    public int getBrojStanova()
+    {
+        return this.broj_stanova;
+    }
+    
+    public void setStan(int i, Stan s)
+    {
+        stanovi[i] = s;
+    }
+    public Stan getStan(int i)
+    {
+        return stanovi[i];
+    }
+
+    @Override
+    public String toString() {
+        return "Zgrada{" + "adresa=" + adresa + ", broj=" + broj + ", opstina=" + opstina + ", grad=" + grad + ", stanovi=" + stanovi + '}';
+    }
+    
+    
+}
+
+
+
+
+
+// KLASA STAN
+
+
+
+
+
+
+
+
+package projekat_nrt_15_16;
+
+
+public class Stan {
+    private int broj_stana;
+    private int broj_ukucana;
+    private String ime_vlasnika;
+    
+    public Stan()
+    {
+        broj_stana = 0;
+        broj_ukucana = 0;
+        ime_vlasnika = "Nepoznato";
+    }
+    public Stan(int broj_stana, int broj_ukucana, String ime_vlasnika)
+    {
+        this.broj_stana = broj_stana;
+        this.broj_ukucana = broj_ukucana;
+        this.ime_vlasnika = ime_vlasnika;
+    }
+
+    public int getBroj_stana() {
+        return broj_stana;
+    }
+
+    public int getBroj_ukucana() {
+        return broj_ukucana;
+    }
+
+    public String getIme_vlasnika() {
+        return ime_vlasnika;
+    }
+
+    public void setBroj_stana(int broj_stana) {
+        this.broj_stana = broj_stana;
+    }
+
+    public void setBroj_ukucana(int broj_ukucana) {
+        this.broj_ukucana = broj_ukucana;
+    }
+
+    public void setIme_vlasnika(String ime_vlasnika) {
+        this.ime_vlasnika = ime_vlasnika;
+    }
+    
+    
+}
+
+
+
+// FUNKCIONALNOSTI KOJE SE TICU KONFIGURACIJE APLIKACIJE
+
+
+
+
+package projekat_nrt_15_16;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+public class KonfiguracijaAplikacije {
+    
+    static boolean KonfigurisanaAplikacija()
+    {
+        int kontrola = 0;
+        File fajl = new File("config\\zgrada.json");
+        try(FileReader citac = new FileReader(fajl)){
+            if(citac != null)
+            {
+                kontrola++;
+            }
+                
+        }catch(IOException e)
+        {
+            //System.out.println("Greska prilikom citanja!");
+        }
+        
+        fajl = new File("nalozi\\predsednik.json");
+        try(FileReader citac = new FileReader(fajl)){     
+            if(citac != null)
+            {
+                kontrola++;
+            }      
+        }catch(IOException e)
+        {
+            //System.out.println("Greska prilikom citanja!");
+        }
+        
+        return kontrola==2;
+    }
+    
+    static Zgrada UnesiPodatkeZgrade()
+    {
+        Zgrada zgrada = new Zgrada();
+        Gson gson = new Gson();
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader upisniTok =new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Unesite podatke o zgradi");
+        String adresa,opstina,grad;
+        int broj, broj_stanova;
+        try{
+            System.out.println("Unesite adresu zgrade(ulica)");
+            adresa =(String) upisniTok.readLine();
+            System.out.println("Unesite broj zgrade");
+            broj = scanner.nextInt();
+            System.out.println("Unesite opstinu");
+            opstina =(String) upisniTok.readLine();
+            System.out.println("Unesite grad");
+            grad =(String) upisniTok.readLine(); 
+            System.out.println("Unesite broj stanova u zgradi");
+            broj_stanova = scanner.nextInt();
+            
+            zgrada.setAdresa(adresa);
+            zgrada.setBroj(broj);
+            zgrada.setOpstina(opstina);
+            zgrada.setGrad(grad);
+            zgrada.setStanovi(broj_stanova);
+            File fajl = new File("config\\zgrada.json");
+            fajl.getParentFile().mkdirs();
+            try(FileWriter upis = new FileWriter(fajl))
+            {
+                gson.toJson(zgrada,upis);
+            }catch(IOException e){
+                System.out.println("Greska Prilikom upisa!");
+            }
+           
+           
+        } catch (IOException e){
+            System.out.println ("Greška");
+        }
+        
+        return zgrada;
+    }
+    
+    static Zgrada ProcitajPodatkeZgrade()
+    {
+        Zgrada zgrada = new Zgrada();
+        Gson gson = new Gson();
+        File fajl = new File("config\\zgrada.json");
+        try(FileReader citac = new FileReader(fajl)){  
+              zgrada = gson.fromJson(citac, Zgrada.class);
+        }catch(IOException e)
+        {
+            System.out.println("Greska prilikom citanja!");
+        }
+        
+        return zgrada;
+        
+    }
+    
+    static Stanar UnesiPodatkePredsednika()
+    {
+        Stanar stanar = new Stanar();
+        Gson gson = new Gson();
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader upisniTok =new BufferedReader(new InputStreamReader(System.in));  
+        
+        System.out.println("Unesite podatke predsednika zgrade");
+        String ime_prezime = "",e_mail = "",kor_ime = "",lozinka="";
+        int godina_rodjenja = 0, broj_stana = 0;
+        boolean vlasnik = false;
+        try{
+                System.out.println("Unesite ime i prezime predsednika");
+                ime_prezime =(String) upisniTok.readLine();
+                stanar.setIme_prezime(ime_prezime);
+                System.out.println("Unesite e-mail adresu");
+                e_mail =(String) upisniTok.readLine();
+                stanar.setE_mail(e_mail);
+                System.out.println("Unesite korisnicko ime");
+                kor_ime =(String) upisniTok.readLine(); 
+                stanar.setKor_ime(kor_ime);
+                System.out.println("Unesite lozinku");
+                lozinka = (String) upisniTok.readLine();
+                stanar.setLozinka(lozinka);
+                System.out.println("Unesite broj stana:");
+                broj_stana = scanner.nextInt();
+                stanar.setBroj_stana(broj_stana);
+                do{
+                    try{
+                        System.out.println("Unesite godinu rodjenja: ");
+                        godina_rodjenja = scanner.nextInt();
+                        if(2018-godina_rodjenja < 18)
+                        {
+                            throw new Maloletnik(2018-godina_rodjenja);
+                        }else{
+                            stanar.setGodina_rodjenja(godina_rodjenja);
+                        }
+                    }catch(Maloletnik m){
+                        System.out.println(m);
+                    }
+                }while(2018-godina_rodjenja < 18);
+                
+                do{
+                   try{
+                        System.out.println("Da li je nosilac stana (DA / NE)?");
+                        String odgovor = upisniTok.readLine();
+                        if(odgovor.toLowerCase().equals("da")){
+                            vlasnik = true;
+                            stanar.setNosilac_stana(vlasnik);
+                        }else{
+                            throw new Nosilac();
+                        }  
+                    }catch(Nosilac n){
+                    System.out.println(n);
+                    } 
+                }while(!vlasnik);
+                
+            
+            File fajl = new File("nalozi\\predsednik.json");
+            fajl.getParentFile().mkdirs();
+            try(FileWriter upis = new FileWriter(fajl))
+            {
+                gson.toJson(stanar,upis);
+            }catch(IOException e){
+                System.out.println("Greska Prilikom upisa!");
+            }
+           
+           
+        } catch (IOException e){
+            System.out.println ("Greška");
+        }
+        
+        return stanar;
+    }
+    
+    
+    
+    static Stanar ProcitajPodatkePredsednika()
+    {
+        Stanar predsednik = new Stanar();
+        Gson gson = new Gson();
+        File fajl = new File("nalozi\\predsednik.json");
+        try(FileReader citac = new FileReader(fajl)){  
+              predsednik = gson.fromJson(citac, Stanar.class);
+        }catch(IOException e)
+        {
+            System.out.println("Greska prilikom citanja!");
+        }
+        
+        return predsednik;
+    }
+    
+    
+    static ArrayList<Stanar> UcitajStanare()
+    {
+        ArrayList<Stanar> stanari = new ArrayList<Stanar>();
+        Gson gson = new Gson();
+        File fajl = new File("nalozi\\stanari.json");
+        
+        //TypeToken<ArrayList<Stanar>> zaJSON = new TypeToken<ArrayList<Stanar>>(){};
+        try(FileReader citac = new FileReader(fajl)){  
+             stanari = gson.fromJson(citac, new TypeToken<ArrayList<Stanar>>(){}.getType());
+        }catch(IOException e)
+        {
+            //System.out.println("Greska prilikom citanja!");
+        }
+        return stanari;
+    }
+
+}
+
+
+class Maloletnik extends Exception
+{
+    private int godine;
+    Maloletnik(int a)
+    {
+        godine=a;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "Nosilac stana ime " +godine +" godina - Predsednik mora biti punoletan";
+    }
+}
+
+class Nosilac extends Exception
+{
+    @Override
+    public String toString()
+    {
+        return "Predsednik mora biti nosilac stana!";
+    }
+}
+
+
+
+// FUNKCIONALNOST SAME APLIKACIJE
+
+
+
+
+package projekat_nrt_15_16;
+import com.google.gson.Gson;
+import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Aplikacija {
+    
+    static int GlavniMeni()
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Unesite redni broj opcije koju zelite");
+        System.out.println("1. Prijava na sistem");
+        System.out.println("2. Ugasi aplikaciju");  
+        try{
+            int opcija;
+            do{
+               opcija = scan.nextInt();
+            }while(opcija<1 || opcija >2);
+        
+            return opcija;
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        
+        
+       return 2;
+    }
+    /*OVO JE PREDSEDNICKI MENI KOJI SADRZI ADMINISTRATIVNE OPCIJE*/
+    static void PredsednickiMeni(ArrayList<Stanar> stanari)
+    {
+        int stanje = 1;
+        while(stanje == 1)
+        {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Unesite redni broj opcije koju zelite");
+            System.out.println("1. Zapisnik sa saveta stanara");
+            System.out.println("2. Informacije o stanarima u zgradi");
+            System.out.println("3. Registracija novog stanara");
+            System.out.println("4. Kreiranje novog zapisnika");
+            System.out.println("5. Odjava");
+            int opcija;
+            do{
+                opcija = scan.nextInt();
+                if(opcija < 1 || opcija > 5)
+                {
+                    System.out.println("Uneli ste nevazecu opciju!");
+                    System.out.println("Unesite zeljenu opciju ponovo:");
+                }
+            }while(opcija<1 || opcija >5);
+
+            switch(opcija)
+            {
+                case 1:
+                    ZapisnikSavetaStanara();
+                    break;
+                case 2:
+                    InformacijeStanara(stanari);
+                    break;
+                case 3:
+                    RegistrujStanara(stanari);
+                    break;
+                case 4:
+                    KreirajNoviZapisnik();
+                    break;
+                case 5:
+                    stanje = 0;
+                    System.out.println("Sada ste izlogovani.");
+                    break;
+                default:
+                    break;
+            } 
+        }
+        
+    }
+    
+    static void KorisnickiMeni(ArrayList<Stanar> stanari)
+    {
+        int stanje = 1;
+        while(stanje == 1)
+        {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Unesite redni broj opcije koju zelite");
+            System.out.println("1. Zapisnik sa saveta stanara");
+            System.out.println("2. Informacije o stanarima u zgradi");
+            System.out.println("3. Odjava");
+            int opcija;
+            do{
+                opcija = scan.nextInt();
+                if(opcija < 1 || opcija > 3)
+                {
+                    System.out.println("Uneli ste nevazecu opciju!");
+                    System.out.println("Unesite zeljenu opciju ponovo:");
+                }
+            }while(opcija<1 || opcija >5);
+
+            switch(opcija)
+            {
+                case 1:
+                    ZapisnikSavetaStanara();
+                    break;
+                case 2:
+                    InformacijeStanara(stanari);
+                    break;
+                case 3:
+                    stanje = 0;
+                    System.out.println("Sada ste izlogovani.");
+                    break;
+                default:
+                    break;
+            } 
+        }
+    }
+    
+    /*OVA FUNKCIJA SLUZI ZA PRIJAVU KORISNIKA
+    PRVO PROVERAVA DA LI SU UNETA LOZINKA I KORISNICKO IME ISTI KAO
+    PREDSEDNIKOVI, U SUPROTNOM PROLAZI KROZ NIZ STANARA*/
+    static Stanar Logovanje(ArrayList<Stanar> stanari, Stanar predsednik)
+    {
+        BufferedReader upisniTok =new BufferedReader(new InputStreamReader(System.in));
+        String korime = "";
+        String lozinka = "";
+        try{
+           System.out.println("Unesite korisnicko ime: ");
+           korime = (String) upisniTok.readLine(); 
+           System.out.println("Unesite lozinku: ");
+           lozinka = (String) upisniTok.readLine();           
+        }catch(IOException e){
+            
+        }  
+        
+        if(predsednik.getKor_ime().equals(korime))
+        {
+            if(predsednik.getLozinka().equals(lozinka))
+            {
+                return predsednik;
+            }
+            System.out.println("Uneli ste pogresnu lozinku!");
+        }
+        
+        for(Stanar s: stanari)
+        {
+            if(s.getKor_ime().equals(korime))
+            {
+                if(s.getLozinka().equals(lozinka))
+                {
+                    return s;
+                }
+                System.out.println("Uneli ste pogresnu lozinku");
+            }
+        }
+        
+        return null;
+    }
+    
+    /*OVA FUNKCIJA SLUZI ZA KREIRANJE ZAHTEVA ZA NOVI NALOG ILI ZA KREIRANJE NOVOG NALOGA
+    UKOLIKO IMATE ADMINISTRATIVNE DOZVOLE ( UKOLIKO STE PREDSEDNIK)*/
+    //mod se prosledjuje kao parametar da utvrdimo da li funkciju poziva admin ili korisnik (1-admin, 0-korisnik)
+    static void KreirajNalog(ArrayList<Stanar> stanari, int mod) 
+    {
+        Stanar stanar = new Stanar();
+        Gson gson = new Gson();
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader upisniTok =new BufferedReader(new InputStreamReader(System.in));  
+        
+        System.out.println("Da biste kreirali korisnicki nalog, molimo unesite sledece podatke");
+        String ime_prezime = "",e_mail = "",kor_ime = "",lozinka="";
+        int godina_rodjenja = 0, broj_stana = 0;
+        boolean vlasnik = false;
+        try{
+                System.out.println("Unesite ime i prezime");
+                ime_prezime =(String) upisniTok.readLine();
+                stanar.setIme_prezime(ime_prezime);
+                System.out.println("Unesite e-mail adresu");
+                e_mail =(String) upisniTok.readLine();
+                stanar.setE_mail(e_mail);
+                System.out.println("Unesite korisnicko ime");
+                kor_ime =(String) upisniTok.readLine(); 
+                stanar.setKor_ime(kor_ime);
+                System.out.println("Unesite lozinku");
+                lozinka = (String) upisniTok.readLine();
+                stanar.setLozinka(lozinka);
+                System.out.println("Unesite broj stana:");
+                broj_stana = scanner.nextInt();
+                stanar.setBroj_stana(broj_stana);
+                System.out.println("Unesite godinu rodjenja: ");
+                godina_rodjenja = scanner.nextInt();
+                stanar.setGodina_rodjenja(godina_rodjenja);
+                System.out.println("Nosilac stana (DA / NE)?");
+                String odgovor = upisniTok.readLine();
+                if(odgovor.toLowerCase().equals("da"))
+                {
+                    vlasnik = true;
+                    stanar.setNosilac_stana(vlasnik);
+                }else{
+                    stanar.setNosilac_stana(vlasnik);
+                }
+             
+                stanar.setNosilac_stana(vlasnik);
+                if(mod == 1){
+                    stanari.add(stanar);
+                }else{
+                    String zahtev = "nalozi\\"+kor_ime+"_zahtev.json";
+                    File fajl = new File(zahtev);
+                    fajl.getParentFile().mkdirs();
+                    try(FileWriter upis = new FileWriter(fajl))
+                    {
+                        gson.toJson(stanar,upis);
+                    }catch(IOException e){
+                         System.out.println("Greska Prilikom upisa!");
+                    }
+                }
+                
+        }catch(IOException e)
+        {
+            
+        }
+    }
+    
+    /*FUNKCIJA KOJA PRIKAZUJE MENI U KOME MOZETE DA ODABERETE
+      KOJI ZAPISNIK ZELITE DA UCITATE*/
+    static void ZapisnikSavetaStanara()
+    {
+        ArrayList<String> fajlovi = new ArrayList<String>();
+        File[] files = new File("zapisnici\\").listFiles();
+        for (File file : files) {
+            if (file.isFile()) {
+                fajlovi.add(file.getName());
+            }
+        }
+        
+        System.out.println("Ovo je lista svih zapisnika, unesite redni broj zapisnika koji zelite da otvorite");
+        int rbr = 1;
+        for(String s: fajlovi)
+        {
+            System.out.println(rbr +". " + s);
+            rbr++;
+        }
+        
+        Scanner scan = new Scanner(System.in);
+        
+        int redni_broj = 0;
+        do{
+            try{
+            redni_broj = scan.nextInt();
+            if(redni_broj < 1 || redni_broj > rbr)
+            {
+                throw new RedniBrojException();
+            }
+            }catch(Exception e)
+            {
+                 System.out.println(e);
+            }
+        }while(redni_broj < 1 || redni_broj >rbr);
+        
+        IspisiZapisnik("zapisnici\\" + fajlovi.get(redni_broj-1));
+        
+    }
+    
+    /*FUNKCIJA KOJA DOBIJA KAO PARAMETAR PUTANJU ZAPISNIKA KOJI JE KORISNIK ODABRAO
+    I ISPISUJE NJEGOV SADRZAJ*/
+    static void IspisiZapisnik(String zapisnik)
+    {
+        try (BufferedReader br = new BufferedReader(new FileReader(zapisnik))) {      
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            
+            System.out.println("Pritisnite bilo koje dugme da se vratite u meni.");
+            System.in.read();
+        }catch(IOException e)
+        {
+            
+        }
+    }
+    
+    /*FUNKCIJA KOJA ISPISUJE PODATKE I INFORMACIJE O SVIM STANARIMA*/
+    static void InformacijeStanara(ArrayList<Stanar> stanari)
+    {
+        for(Stanar s: stanari)
+        {
+            System.out.println(s);
+        }
+        System.out.println("Pritisnite bilo koje dugme da se vratite u meni.");
+        try {
+            System.in.read();
+        } catch (IOException ex) {
+            
+        }
+    }
+    
+    /*MENI ZA REGISTRACIJU NOVOG STANARA*/
+    static void RegistrujStanara(ArrayList<Stanar> stanari)
+    {
+        Scanner scan = new Scanner(System.in);
+        int stanje = 1;
+        int opcija = 0;
+        while(stanje == 1)
+        {
+            System.out.println("Unesite zeljenu opciju: ");
+            System.out.println("1. Kreiraj nalog na osnovu podnetih zahteva");
+            System.out.println("2. Rucno napravi nalog");
+            System.out.println("3. Izlaz");
+            try{
+                do{
+                   opcija = scan.nextInt();
+                }while(opcija<1 || opcija >3);
+            }catch(Exception e){}
+            
+            switch(opcija)
+            {
+                case 1:
+                    KreirajNaOsnovuZahteva(stanari);
+                    break;
+                case 2:
+                    KreirajNalog(stanari, 1);
+                    break;
+                case 3:
+                    stanje = 0;
+                    break;
+            }
+        }
+    }
+    
+    /*FUNKCIJA KOJA IZLISTAVA SVE ZAHTEVE IZ FOLDERA NALOZI I OMOGUCAVA ADMINISTRATORU
+    DA ODABERE INDEKS ZAHTEVA KOJI ZELI DA ODOBRI I TIME KREIRA NOVI NALOG*/
+    static void KreirajNaOsnovuZahteva(ArrayList<Stanar> stanari)
+    {
+        ArrayList<String> fajlovi = new ArrayList<String>();
+        File[] files = new File("nalozi\\").listFiles();
+        for (File file : files) {
+            if(file.isFile())
+            {
+                if(file.getName().contains("_zahtev"))
+                {
+                    fajlovi.add(file.getName());
+                }
+            }
+                     
+        }   
+        System.out.println("Ovo je lista svih zahteva, unesite redni broj zahteva koji zelite da odobrite");
+        int rbr = 1;
+        for(String s: fajlovi)
+        {
+            System.out.println(rbr +". " + s);
+            rbr++;
+        }
+        System.out.println(rbr++ + ". Izadji iz aplikacije");
+        Scanner scan = new Scanner(System.in);
+        
+        int redni_broj = 0;
+        do{
+            try{
+            redni_broj = scan.nextInt();
+            if(redni_broj < 1 || redni_broj > rbr)
+            {
+                throw new RedniBrojException();
+            }
+            }catch(Exception e)
+            {
+                 System.out.println(e);
+            }
+        }while(redni_broj < 1 || redni_broj >rbr);
+        
+        if(redni_broj == rbr-1) return;
+        
+        Stanar novi_stanar = new Stanar();
+        String zahtev = "nalozi\\" + fajlovi.get(redni_broj-1);
+        Gson gson = new Gson();
+        File fajl = new File(zahtev);
+        try(FileReader citac = new FileReader(fajl)){  
+              novi_stanar = gson.fromJson(citac, Stanar.class);
+        }catch(IOException e)
+        {
+            System.out.println("Greska prilikom citanja!");
+        }
+        
+        stanari.add(novi_stanar);
+            
+    }
+    
+    /*FUNKCIJA KOJA OMOGUCAVA DODAVANJE NOVOG ZAPISNIKA*/
+    static void KreirajNoviZapisnik()
+    {
+        Scanner scan = new Scanner(System.in);
+        try{
+            BufferedReader upisniTok =new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Unesite ime zapisnika: ");
+            String ime_zapisnika = (String)upisniTok.readLine();
+            File fajl = new File("zapisnici\\"+ime_zapisnika+".txt");
+            fajl.getParentFile().mkdirs();
+            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fajl), "utf-8"));
+            
+            System.out.println("Unesite tekst zapisnika(za kraj unesite rec STOP)");
+            String tekst_zapisnika="";
+            while(true)
+            {
+                String linija = (String)upisniTok.readLine();
+                if(linija.equals("STOP")) break;
+                tekst_zapisnika+=linija+"\n";
+            }
+            
+            writer.write(tekst_zapisnika);
+            writer.close();
+        }catch (IOException ex) {}
+   
+    }
+    
+    
+    /*MALA FUNKCIJA KOJA PITA KORISNIKA DA LI ZELI DA PODNESE ZAHTEV ZA KREIRANJE*/
+    static boolean DaLiZelis()
+    {
+        BufferedReader upisniTok =new BufferedReader(new InputStreamReader(System.in));  
+        
+        try{
+            System.out.println("Ovaj nalog ne postoji. Da li zelite da podnesete zahtev za kreiranje? (DA / NE)");
+            String odgovor = upisniTok.readLine();
+            
+            if(odgovor.toLowerCase().equals("da"))
+            {
+                return true;
+            }
+            return false;
+        }
+        catch(IOException e){
+            
+        }
+        return false;
+    }
+    
+    /*FUNKCIJA KOJA CUVA PROMENE O PODACIMA ZA STANARE(NOVI NALOZI)*/
+    static void SacuvajPodatkeStanara(ArrayList<Stanar> stanari)
+    {
+        Gson gson = new Gson();
+        File fajl = new File("nalozi\\stanari.json");
+        fajl.getParentFile().mkdirs();
+        
+         try(FileWriter upis = new FileWriter(fajl))
+         {
+                gson.toJson(stanari,upis);
+         }catch(IOException e){
+                System.out.println("Greska Prilikom upisa!");
+         }
+    }
+    
+    /*FUNKCIJA KOJA POPUNJAVA INFORMACIJE O STANOVIMA U ZGRADI NA 
+    OSNOVU PODATAKA O STANARIMA*/
+    static void AzurirajPodatkeStanova(ArrayList<Stanar> stanari, Stanar predsednik, Zgrada zgrada)
+    {
+       if(predsednik.getBroj_stana() < zgrada.getBrojStanova() && predsednik.getBroj_stana() > 0 )
+       {
+           zgrada.getStan(predsednik.getBroj_stana()).setIme_vlasnika(predsednik.getIme_prezime());
+           zgrada.getStan(predsednik.getBroj_stana()).setBroj_stana(predsednik.getBroj_stana());
+           zgrada.getStan(predsednik.getBroj_stana()).setBroj_ukucana(zgrada.getStan(predsednik.getBroj_stana()).getBroj_ukucana()+1);
+       }
+       
+       for(Stanar s: stanari)
+       {
+           if(s.getBroj_stana() < zgrada.getBrojStanova() && s.getBroj_stana() > 0 )
+           {
+                zgrada.getStan(s.getBroj_stana()).setIme_vlasnika(s.getIme_prezime());
+                zgrada.getStan(s.getBroj_stana()).setBroj_stana(s.getBroj_stana());
+                zgrada.getStan(s.getBroj_stana()).setBroj_ukucana(zgrada.getStan(s.getBroj_stana()).getBroj_ukucana()+1);
+           }
+       }
+       
+            Gson gson = new Gson();
+            File fajl = new File("config\\zgrada.json");
+            fajl.getParentFile().mkdirs();
+            try(FileWriter upis = new FileWriter(fajl))
+            {
+                gson.toJson(zgrada,upis);
+            }catch(IOException e){
+                System.out.println("Greska Prilikom upisa!");
+            }
+    }
+}
+
+/*IZUZETAK UKOLIKO JE REDNI BROJ ZAPISNIKA NEPOSTOJECI*/
+class RedniBrojException extends Exception
+{
+    @Override
+    public String toString()
+    {
+        return "Redni broj zapisnika koji ste uneli je nepostojeci";
+    }
+}
+
+
+
+
+
+// MAIN PROJEKTA
+
+
+
+
+
+package projekat_nrt_15_16;
+import java.util.ArrayList;
+import static projekat_nrt_15_16.Aplikacija.*;
+import static projekat_nrt_15_16.KonfiguracijaAplikacije.*;
+
+
+public class Projekat_nrt_15_16 {
+
+    
+    public static void main(String[] args) {
+        
+        Zgrada zgrada = new Zgrada();
+        ArrayList<Stanar> stanari = new ArrayList<Stanar>();
+        Stanar predsednik = new Stanar();
+        
+        if(KonfigurisanaAplikacija())
+        {
+            zgrada = ProcitajPodatkeZgrade();
+            predsednik = ProcitajPodatkePredsednika();
+            stanari = UcitajStanare();
+            stanari.add(predsednik);
+        }else{
+           zgrada = UnesiPodatkeZgrade(); 
+           predsednik = UnesiPodatkePredsednika();
+        }
+        
+        petlja1:
+        while(true)
+        {
+            int meni = GlavniMeni();
+            petlja2:
+            while(meni == 1)
+            {
+                Stanar ulogovan = Logovanje(stanari,predsednik);
+                if(ulogovan == null)
+                {
+                    if(DaLiZelis())
+                    {
+                        KreirajNalog(stanari, 0);
+                    }
+                    continue petlja1;
+                    
+                }else if(ulogovan == predsednik){
+                    System.out.println("Dobrodosli, " + ulogovan.getIme_prezime() + " ,ulogovani ste kao administrator");
+                    PredsednickiMeni(stanari);
+                    continue petlja1;
+                }else{
+                    System.out.println("Dobrodosli," + ulogovan.getIme_prezime() + " ,ulogovani ste kao korisnik");
+                    KorisnickiMeni(stanari);
+                    continue petlja1;
+                }   
+            }
+            
+           break;
+           
+        }
+        
+        SacuvajPodatkeStanara(stanari);
+        AzurirajPodatkeStanova(stanari,predsednik,zgrada);
+    }
+    
+}
